@@ -1,31 +1,50 @@
-print("Simple calculator")
+def add(a, b):
+    return a + b
 
-num1 = float(input("Enter first number: "))
-num2 = float(input("Enter second number: "))
+def subtract(a, b):
+    return a - b
 
-print("1. Add")
-print("2. Subtract")
-print("3. Multiply")
-print("4. Divide")
+def multiply(a, b):
+    return a * b
 
-choice = input("Enter choice: ")
+def divide(a, b):
+    if b != 0:
+        return a / b
+    else:
+        return "cannot divide by zero"
+    
 
-if choice == "1":
-    print("Result:", num1 + num2)
+while True:    
+    print("\nSimple calculator")
 
-elif choice == "2":
-    print("Result:", num1 - num2)
+    num1 = float(input("Enter first number: "))
+    num2 = float(input("Enter second number: "))
 
-elif choice == "3":
-    print("Result:", num1 * num2)
+    print("1. Add")
+    print("2. Subtract")
+    print("3. Multiply")
+    print("4. Divide")
+    print("5. Exit")
 
-elif choice == "4":
-    if num2 != 0:
-        print("Result:", num1 / num2)
+    choice = input("Enter choice: ")
+
+    if choice == "1":
+        print("Result:", add(num1, num2))
+
+    elif choice == "2":
+        print("Result:", subtract(num1, num2))
+
+    elif choice == "3":
+        print("Result:", multiply(num1, num2))
+
+    elif choice == "4":
+        print("Result:", divide(num1, num2))
+
+    elif choice == "5":
+        print("Exiting calculator...")
+        break
 
     else:
-        print("Cannot divide by zero")
+        print("invalid choice")
 
-else:
-    print("Invalid choices")
                    
